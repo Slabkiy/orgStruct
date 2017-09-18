@@ -1,0 +1,82 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+       url(iconfont/MaterialIcons-Regular.woff) format('woff'),
+       url(iconfont/MaterialIcons-Regular.ttf) format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.grid{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  margin:0;
+  right:0;
+  bottom:0;
+  left: 0;
+}
+.node {
+    cursor: pointer;
+  }
+.node rect {
+  fill: rgba(255,255,255,.0);
+  stroke: steelblue;
+  stroke-width: 3px;
+  transition: transform .3s ease-out;
+  -o-transition: -o-transform .3s ease-out;
+  -webkit-transition: -webkit-transform .3s ease-out;
+  -moz-transition: -moz-transform .3s ease-out;
+}
+.node .circle{
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+  display: none;
+}
+.node .remove{
+  stroke: #F44336;
+}
+.node:hover .circle{
+  display: block;
+}
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text { font: 12px sans-serif; }
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
