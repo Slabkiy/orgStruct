@@ -190,12 +190,12 @@ function update(source) {
     .attr('fill', addBackground('remove', nodeEnter))
     .on('click', removeNode);
   nodeEnter.append('circle')
-    .attr('class', 'circle tools')
+    .attr('class', 'circle edit')
     .attr('r', 15)
     .attr('cx', rect.width / 2)
     .attr('cy', (-rect.height / 2) + 35)
-    .attr('fill', addBackground('tools', nodeEnter))
-    .on('click', toolsNode);
+    .attr('fill', addBackground('edit', nodeEnter))
+    .on('click', editNode);
   // UPDATE
   var nodeUpdate = nodeEnter.merge(node);
 
@@ -336,18 +336,18 @@ function update(source) {
         .attr('height', '100%')
         .attr('width', '150%')
         .append('rect')
-        .attr('x', rect.width/2-15)
-        .attr('y', -rect.height/2-15)
+        //.attr('x', rect.width/2-15)
+        //.attr('y', -rect.height/2-15)
         .attr('width', '30')
         .attr('height', '30')
       bgCircle.append('image')
-        .attr('x', rect.width/2-15)
-        .attr('y', -rect.height/2-15)
+        //.attr('x', rect.width/2-15)
+        //.attr('y', -rect.height/2-15)
         .attr('width', '30')
         .attr('height', '30')
         .attr('xlink:href', 'assets/images/' + type + '.svg');
     }
-    if (type === 'tools') {
+    if (type === 'edit') {
       var bgCircle = node.append('defs').append('pattern');
       bgCircle.attr('id', id)
         .attr('x', rect.width/2-15)
@@ -356,13 +356,13 @@ function update(source) {
         .attr('height', '100%')
         .attr('width', '150%')
         .append('rect')
-        .attr('x', rect.width/2-15)
-        .attr('y', -rect.height/2+20)
+        //.attr('x', rect.width/2-15)
+        //.attr('y', -rect.height/2+20)
         .attr('width', '30')
         .attr('height', '30')
       bgCircle.append('image')
-        .attr('x', rect.width/2-15)
-        .attr('y', -rect.height/2+20)
+        //.attr('x', rect.width/2-15)
+        //.attr('y', -rect.height/2+20)
         .attr('width', '30')
         .attr('height', '30')
         .attr('xlink:href', 'assets/images/' + type + '.svg');
@@ -441,7 +441,7 @@ function removeNode(node) {
   }
 }
 
-function toolsNode(d) {
+function editNode(d) {
   $("#nodeTools").modal('open');
   var scope = angular.element($('body')).scope();
   scope.$apply(function() {

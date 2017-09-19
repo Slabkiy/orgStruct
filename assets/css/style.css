@@ -61,7 +61,7 @@
 .node .add{
   stroke: #0288d1;
 }
-.node .tools{
+.node .edit{
   stroke: #009688;
 }
 .node:hover .circle{
