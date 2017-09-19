@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head ng-app="appTree">
-	<meta charset="UTF-8">
-	<title>orgStruct</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="assets/materialize/css/materialize.min.css">
-	<script type="text/javascript" src="assets/js/lib/angular/angular.min.js"></script>
-	<script type="text/javascript" src="assets/js/lib/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
-</head>
-<body>
-<div class="row grid" ng-controller="treeCtrl as tree"></div>
-<!-- load the d3.js library -->	
-<script src="assets/js/lib/d3.v4.min.js"></script>
-<script type="text/javascript" src="assets/js/app.js"></script>
-</body>
+<html ng-app="appTree">
+	<head>
+		<meta charset="UTF-8">
+		<title>orgStruct</title>
+		<script type="text/javascript" src="assets/js/lib/angular/angular.min.js"></script>
+		<script type="text/javascript" src="assets/js/lib/jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/materialize/css/materialize.min.css">
+	</head>
+	<body ng-controller="treeCtrl as tree">
+		<div class="row grid"></div>
+		<!-- Modal Structure -->
+		<div id="nodeTools" class="modal modal-fixed-footer" >
+			<div class="modal-content">
+				<h4>Node</h4>
+				<div class="row">
+					<div class="input-field col s12">
+						<input value="{{tree.node.data.name}}" ng-model="tree.node.data.name" id="node-title" type="text" class="validate">
+						<label class="active" for="node-title">Title</label>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a ng-click="tree.saveChange()" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+			</div>
+		</div>
+		
+		<!-- load the d3.js library -->
+		
+		<script type="text/javascript" src="assets/js/lib/d3.v4.min.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+		<script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+	</body>
 </html>
