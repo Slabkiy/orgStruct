@@ -422,6 +422,7 @@ function removeNode(node) {
           children[i].parent = node.parent;
           replaceDepth(children[i]);
           node.parent.height += children.length;
+          if(!node.parent.children) node.parent.children = [];
           node.parent.children.push(children[i]);
         }
       }
@@ -464,7 +465,7 @@ function getMaxRow(arr) {
 }
 /**
  *Find an element in an array
- * @param  {Array}  array  
+ * @param  {Array}  array
  * @param  {Number} value The required element
  * @return {Number}       Element index
  */
@@ -479,6 +480,7 @@ function findArrayIndex(array, value) {
 
   return -1;
 }
+debug 
 /**
  * Debug
  * @param  {[String]} msg  [message]
